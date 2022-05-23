@@ -10,20 +10,12 @@ OUTPUT(profileResults, ALL, NAMED('profileResults'));
 OUTPUT(ds);
 
 Filtragem e tabulaçao de datasets
- recset := ds(date[]<65);
- recset; //Equivale a: OUTPUT(recset);
+ recset := ds(date[7..10]=2010);
+ recset; //
 
-// recset := ds(Age<65,Gender='M');
+// recset2 := ds(date[7..10]=2020);
 // recset;
 
-// IsSeniorMale := ds.Age>65 AND ds.Gender='M'; //definição do tipo "boolean"
-// recset := ds(IsSeniorMale);
-// recset;
-
-// SetGender := ['M','F'];  //definicao do tipo "set"
-// recset := ds(Gender IN SetGender);
-// recset;						// definição do tipo "recordset"
-// COUNT(recset);    //Equivale a: OUTPUT(COUNT(recset));
 
  rec2 := RECORD
   ds.date;
